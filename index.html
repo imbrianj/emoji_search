@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html" id="verbose">
   <head>
     <title>Emoji Search</title>
     <meta charset="UTF-8" />
@@ -96,6 +96,25 @@
       #bd ul li {
         display: inline-block;
         font-size: 2em;
+      }
+
+      html:target #bd ul li:hover:after {
+        background: #FFF;
+        border: 1px solid #000;
+        -moz-border-radius: .2em;
+        -webkit-border-radius: .2em;
+        border-radius: .2em;
+        -moz-box-shadow: 0 3px 5px 0 rgba(17,17,17,.8);
+        -webkit-box-shadow: 0 3px 5px 0 rgba(17,17,17,.8);
+        box-shadow: 0 3px 5px 0 rgba(17,17,17,.8);
+        content: attr(data-tags);
+        display: block;
+        float: left;
+        font-size: .5em;
+        margin-top: 1em;
+        padding: .2em;
+        position: absolute;
+        z-index: 4;
       }
 
       #bd ul li a {
@@ -891,14 +910,22 @@
 
             // Emoji Clicking
             that.event.add(body, 'click', function(e) {
-              var elm        = that.getTarget(e),
-                  tagName    = elm.tagName.toLowerCase(),
-                  copyBuffer = '';
+              var elm = that.getTarget(e);
 
               if(elm.tagName.toLowerCase() === 'a') {
                 e.preventDefault();
 
                 window.history.pushState({ emoji : Emoji.getText(elm)}, '', elm.href);
+              }
+            });
+
+            // Emoji Double Clicking
+            that.event.add(body, 'dblclick', function(e) {
+              var elm = that.getTarget(e);
+
+              if(elm.tagName.toLowerCase() === 'a') {
+                e.preventDefault();
+
                 window.prompt("Copy to clipboard: Command+C, Enter", Emoji.getText(elm));
               }
             });
