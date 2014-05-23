@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <title>Emoji Search</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style type="text/css">
+      html,
+      body,
+      div,
+      span,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      a,
+      img,
+      ul,
+      li {
+        border: 0;
+        font-family: inherit;
+        font-size: 100%;
+        font-style: inherit;
+        font-weight: inherit;
+        margin: 0;
+        outline: 0;
+        padding: 0;
+        vertical-align: baseline;
+      }
+
+      :focus {
+        outline: #000 dotted thin;
+      }
+
+      a {
+        color: #286EA0;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      a:visited {
+        color: #6B899F;
+      }
+
+      body {
+        background: #FFF;
+        color: #000;
+        font-family: helvetica;
+        line-height: 1.3;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      p {
+        margin: .5em 0;
+      }
+
+      body {
+        background: #CCC;
+        padding: 2em 5%;
+      }
+
+      #bd h2,
+      #bd label {
+        border-bottom: 1px solid #000;
+        font-size: 1.5em;
+        margin: .5em 0;
+        text-shadow: 3px 3px 5px rgba(17,17,17,.1);
+      }
+
+      #bd fieldset {
+        border: none;
+        padding: 0;
+      }
+
+      #bd fieldset label {
+        margin-right: 1em;
+      }
+
+      #bd fieldset input {
+        border: 1px solid #000;
+        font-size: 1.5em;
+        max-width: 90%;
+        min-width: 8em;
+        width: 50%;
+      }
+
+      #bd ul li {
+        display: inline-block;
+        font-size: 2em;
+      }
+
+      #bd ul li a {
+        display: block;
+        outline: none;
+        -moz-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+      }
+
+      #bd ul li a:hover,
+      #bd ul li a:active,
+      #bd ul li:target a {
+        text-decoration: none;
+        text-shadow: 0 3px 5px rgba(17,17,17,.8);
+        -moz-transform: scale(2.5);
+        -o-transform: scale(3);
+        -webkit-transform: scale(2.5);
+        transform: scale(2.5);
+        z-index: 4;
+      }
+
+      #bd ul li:target a {
+        z-index: 3;
+      }
+
+      #ft {
+        border-top: 1px solid #000;
+        margin-top: .5em;
+      }
+
+      #ft img {
+        float: left;
+        margin: .5em 1em 0 0;
+      }
+
+      #ft p {
+        font-size: .75em;
+        line-height: 31px;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="bd">
+        <form>
+          <fieldset>
+            <label for="search-term">Search Tags:</label>
+            <input id="search-term" type="text" />
+            <style id="search-style" type="text/css"></style>
+          </fieldset>
+        </form>
+        <h2 id="people">People</h2>
+        <ul>
+          <li data-tags="smiley,face,happy,grin,stoked,cheer,laugh" id="smile"><a href="#smile">😄</a></li>
+          <li data-tags="smiley,face,happy,grin,stoked,cheer,excited" id="bigSmile"><a href="#bigSmile">😃</a></li>
+          <li data-tags="smiley,face,happy,grin,stoked,cheer,laugh" id="bigGrin"><a href="#bigGrin">😀</a></li>
+          <li data-tags="smiley,face,happy,grin,stoked,warm,fuzzy" id="grin"><a href="#grin">😊</a></li>
+          <li data-tags="smiley,face,happy,grin" id="smile"><a href="#smile">☺</a></li>
+          <li data-tags="smiley,face,happy,grin,wink" id="wink"><a href="#wink">😉</a></li>
+          <li data-tags="smiley,face,happy,grin,love,sweet,horny" id="love"><a href="#love">😍</a></li>
+          <li data-tags="smiley,face,happy,grin,kissy,sweet" id="kissy1"><a href="#kissy1">😘</a></li>
+          <li data-tags="smiley,face,happy,grin,kissy,sweet" id="kissy2"><a href="#kissy2">😚</a></li>
+          <li data-tags="smiley,face,happy,grin,kissy,sweet" id="kissy3"><a href="#kissy3">😗</a></li>
+          <li data-tags="smiley,face,happy,grin,kissy,sweet,eyes closed" id="kissy4"><a href="#kissy4">😙</a></li>
+          <li data-tags="smiley,face,happy,grin,wink,stoked,laugh,excited,tongue,meth,bath salts,crazy" id="tongue1"><a href="#tongue1">😜</a></li>
+          <li data-tags="smiley,face,happy,grin,stoked,laugh,excited,tongue,crazy" id="tongue2"><a href="#tongue2">😝</a></li>
+          <li data-tags="smiley,face,happy,grin,stoked,excited,tongue" id="tongue3"><a href="#tongue3">😛</a></li>
+          <li data-tags="face,shocked" id="shocked"><a href="#shocked">😳</a></li>
+          <li data-tags="face,grimace,sneer" id="grimace"><a href="#grimace">😁</a></li>
+          <li data-tags="face,sad,solemn" id="solemn"><a href="#solemn">😔</a></li>
+          <li data-tags="face,satisfied,content" id="content"><a href="#content">😌</a></li>
+          <li data-tags="face,uncertain,questioning,unsure,doubtful" id="doubt"><a href="#doubt">😒</a></li>
+          <li data-tags="face,disparaged,tired,defeated" id="defeated"><a href="#defeated">😞</a></li>
+          <li data-tags="face,perservere" id="perservere"><a href="#perservere">😣</a></li>
+          <li data-tags="face,tears,sad,cry" id="cry"><a href="#cry">😢</a></li>
+          <li data-tags="face,tears,happy,cry,laugh" id="happyTears"><a href="#happyTears">😂</a></li>
+          <li data-tags="face,tears,waterfalls,mourning" id="mourning"><a href="#mourning">😭</a></li>
+          <li data-tags="face,tears,sad,cry" id="cry2"><a href="#cry2">😪</a></li>
+          <li data-tags="face,tears,sad,cry" id="cry3"><a href="#cry3">😥</a></li>
+          <li data-tags="face,tears,cold sweat,cry" id="cry4"><a href="#cry4">😰</a></li>
+          <li data-tags="face,sweat,happy,smile" id="happySweat"><a href="#happySweat">😅</a></li>
+          <li data-tags="face,cold sweat" id="sweat"><a href="#sweat">😓</a></li>
+          <li data-tags="face,weary,Pavarotti" id="weary"><a href="#weary">😩</a></li>
+          <li data-tags="face,weary,Pavarotti" id="weary2"><a href="#weary2">😫</a></li>
+          <li data-tags="face,shocked" id="shocked"><a href="#shocked">😨</a></li>
+          <li data-tags="face,scream,munch,Edvard Munch,despair" id="despair"><a href="#despair">😱</a></li>
+          <li data-tags="face,upset,dissatisfied,mad,angry" id="dissatisfied"><a href="#dissatisfied">😠</a></li>
+          <li data-tags="face,upset,fuming,mad,angry" id="angry"><a href="#angry">😡</a></li>
+          <li data-tags="face,huffing,triumph" id="triumph"><a href="#triumph">😤</a></li>
+          <li data-tags="face,confounded" id="confounded"><a href="#confounded">😖</a></li>
+          <li data-tags="face,excited,happy,stoked" id="excited"><a href="#">😆</a></li>
+          <li data-tags="face,smile,tongue,silly,goofy" id="silly"><a href="#silly">😋</a></li>
+          <li data-tags="face,hospital,nurse,sick,sars,flu" id="sick"><a href="#sick">😷</a></li>
+          <li data-tags="face,deal with it,sunglasses,David Caruso" id="sunglasses"><a href="#sunglasses">😎</a></li>
+          <li data-tags="face,sleepy,tired" id="sleepy"><a href="#sleepy">😴</a></li>
+          <li data-tags="face,dead,amazed,astonished" id="amazed"><a href="#">😵</a></li>
+          <li data-tags="face,dead,amazed,astonished" id="amazed2"><a href="#amazed2">😲</a></li>
+          <li data-tags="face,worried" id="worried"><a href="#worried">😟</a></li>
+          <li data-tags="face,anguish,just saw a car accident,mom?" id="anguish"><a href="#anguish">😦</a></li>
+          <li data-tags="face,anguish" id="anguish2"><a href="#anguish2">😧</a></li>
+          <li data-tags="face,demon,happy,horns" id="happyDemon"><a href="#happyDemon">😈</a></li>
+          <li data-tags="face,demon,sad,horns" id="sadDemon"><a href="#sadDemon">👿</a></li>
+          <li data-tags="face,shocked,whoa,wow,wonder" id="wow"><a href="#wow">😮</a></li>
+          <li data-tags="face,look I brushed my teeth,grimace,my middle school class photo" id="grimace"><a href="#grimace">😬</a></li>
+          <li data-tags="face,meh,whatevs" id="meh"><a href="#meh">😐</a></li>
+          <li data-tags="face,meh,hmm,whatevs" id="meh2"><a href="#meh2">😕</a></li>
+          <li data-tags="face,surprised,wonder,science,Carl Sagan" id="wonder"><a href="#wonder">😯</a></li>
+          <li data-tags="face,no mouth,what good is a phone call if you're unable to speak?,quiet" id="quiet"><a href="#quiet">😶</a></li>
+          <li data-tags="face,angel,peacful,happy,good" id=""><a href="#">😇</a></li>
+          <li data-tags="face,smirk,confident,confidence" id="confident"><a href="#confident">😏</a></li>
+          <li data-tags="face,expressionless" id="expressionless"><a href="#expressionless">😑</a></li>
+          <li data-tags="face,Gua Pi Mao,hat,cap,skullcap" id="guaPiMo"><a href="#guaPiMo">👲</a></li>
+          <li data-tags="face,turban" id="turban"><a href="#turban">👳</a></li>
+          <li data-tags="face,cop,police,donut" id="police"><a href="#police">👮</a></li>
+          <li data-tags="face,construction worker" id="construction"><a href="#construction">👷</a></li>
+          <li data-tags="face,queens guard,soldier,cap,hat" id="queensGuard"><a href="#queensGuard">💂</a></li>
+          <li data-tags="face,baby,happy" id="baby"><a href="#baby">👶</a></li>
+          <li data-tags="face,boy,happy" id="boy"><a href="#boy">👦</a></li>
+          <li data-tags="face,girl,happy" id="girl"><a href="#girl">👧</a></li>
+          <li data-tags="face,man,happy,mustache" id="man"><a href="#man">👨</a></li>
+          <li data-tags="face,woman,happy" id="woman"><a href="#woman">👩</a></li>
+          <li data-tags="face,old man,bald" id="oldMan"><a href="#oldMan">👴</a></li>
+          <li data-tags="face,old woman" id="oldWoman"><a href="#oldWoman">👵</a></li>
+          <li data-tags="face,boy,happy" id="boy2"><a href="#boy2">👱</a></li>
+          <li data-tags="face,angel" id="angel"><a href="#angel">👼</a></li>
+          <li data-tags="face,princess" id="princess"><a href="#princess">👸</a></li>
+          <li data-tags="face,cat,smile,grin" id="catSmile"><a href="#catSmile">😺</a></li>
+          <li data-tags="face,cat,smile,grin,laugh" id="catLaugh"><a href="#catLaugh">😸</a></li>
+          <li data-tags="face,cat,in love" id="catLove"><a href="#catLove">😻</a></li>
+          <li data-tags="face,cat,kiss,smooch" id="catKiss"><a href="#catKiss">😽</a></li>
+          <li data-tags="face,cat,smirk" id="catSmirk"><a href="#catSmirk">😼</a></li>
+          <li data-tags="face,cat,scream,despair" id="catDespair"><a href="#catDespair">🙀</a></li>
+          <li data-tags="face,cat,cry,sad" id="catCry"><a href="#catCry">😿</a></li>
+          <li data-tags="face,cat,laugh,tears,happy" id="catHappyTears"><a href="#catHappyTears">😹</a></li>
+          <li data-tags="face,cat,angry" id="catAngry"><a href="#catAngry">😾</a></li>
+          <li data-tags="japan,japanese,mask,Namahage" id="namahage"><a href="#namahage">👹</a></li>
+          <li data-tags="japan,japanese,mask,Tengu" id="tengu"><a href="#tengu">👺</a></li>
+          <li data-tags="monkey,see no evil" id="monkeySee"><a href="#monkeySee">🙈</a></li>
+          <li data-tags="monkey,hear no evil" id="monkeyHear"><a href="#monkeyHear">🙉</a></li>
+          <li data-tags="monkey,say no evil" id="monkeySay"><a href="#monkeySay">🙊</a></li>
+          <li data-tags="skull,undead" id="skull"><a href="#skull">💀</a></li>
+          <li data-tags="alien,Newt Gingrich" id="alien"><a href="#alien">👽</a></li>
+          <li data-tags="smile,kaka,poop,turd,shit,scat" id="kaka"><a href="#kaka">💩</a></li>
+          <li data-tags="fire,burn,pyro" id="fire"><a href="#fire">🔥</a></li>
+          <li data-tags="stars" id="stars"><a href="#stars">✨</a></li>
+          <li data-tags="gold star,good job" id="goldStar"><a href="#goldStar">🌟</a></li>
+          <li data-tags="the more you know,star,revolve,dizzy" id="revolve"><a href="#revolve">💫</a></li>
+          <li data-tags="explosion,Michael Bay,shit just got real" id="explosion"><a href="#explosion">💥</a></li>
+          <li data-tags="anger" id="anger"><a href="#anger">💢</a></li>
+          <li data-tags="drops,rain drops" id="drops"><a href="#drops">💦</a></li>
+          <li data-tags="drop,rain drop" id="drop"><a href="#drop">💧</a></li>
+          <li data-tags="sleep,zzz" id="sleep"><a href="#sleep">💤</a></li>
+          <li data-tags="breeze,wind,fart" id="breeze"><a href="#breeze">💨</a></li>
+          <li data-tags="ear" id="ear"><a href="#ear">👂</a></li>
+          <li data-tags="eyes" id="eyes"><a href="#eyes">👀</a></li>
+          <li data-tags="nose" id="nose"><a href="#nose">👃</a></li>
+          <li data-tags="tongue" id="tongue"><a href="#tongue">👅</a></li>
+          <li data-tags="lips,mouth" id="lips"><a href="#lips">👄</a></li>
+          <li data-tags="hand,thumbs up,ok,yup,cool" id="thumbsUp"><a href="#thumbsUp">👍</a></li>
+          <li data-tags="hand,thumbs down,not ok,nope" id="thumbsDown"><a href="#thumbsDown">👎</a></li>
+          <li data-tags="hand,ok,a-ok,pinch" id="handOk"><a href="#handOk">👌</a></li>
+          <li data-tags="hand,fist,fisting,punch,dap,fist bump" id="fistBump"><a href="#fistBump">👊</a></li>
+          <li data-tags="hand,fist,up" id="fist"><a href="#fist">✊</a></li>
+          <li data-tags="hand,peace,hippy,free love" id="peace"><a href="#peace">✌</a></li>
+          <li data-tags="hand,open palm,left" id="palmLeft"><a href="#palmLeft">👋</a></li>
+          <li data-tags="hand,open palm" id="palm"><a href="#palm">✋</a></li>
+          <li data-tags="hands,open hands" id="openHands"><a href="#openHands">👐</a></li>
+          <li data-tags="hand,finger,point up" id="fingerUp"><a href="#fingerUp">👆</a></li>
+          <li data-tags="hand,finger,point down" id="fingerDown"><a href="#fingerDown">👇</a></li>
+          <li data-tags="hand,finger,point right" id="fingerRight"><a href="#fingerRight">👉</a></li>
+          <li data-tags="hand,finger,point left" id="fingerLeft"><a href="#fingerLeft">👈</a></li>
+          <li data-tags="hands,magic hands,jazz hands,paper football" id="magicHands"><a href="#magicHands">🙌</a></li>
+          <li data-tags="hands,clapping,high-5,hi-5,pray" id="clap"><a href="#clap">🙏</a></li>
+          <li data-tags="hand,finger,point up" id="fingerUp2"><a href="#fingerUp2">☝</a></li>
+          <li data-tags="hands,clapping" id="clapping"><a href="#clapping">👏</a></li>
+          <li data-tags="biceps,muscles,gym,do you even lift,curls,bro" id="bicep"><a href="#bicep">💪</a></li>
+          <li data-tags="man,walk,left" id="walk"><a href="#walk">🚶</a></li>
+          <li data-tags="man,run,left" id="run"><a href="#run">🏃</a></li>
+          <li data-tags="salsa,dancing,woman,dancer" id="salsa"><a href="#salsa">💃</a></li>
+          <li data-tags="couple,happy,holding hands" id="holdingHands"><a href="#holdingHands">👫</a></li>
+          <li data-tags="family photo" id="family"><a href="#family">👪</a></li>
+          <li data-tags="men,happy,holding hands,one love" id="menHoldingHands"><a href="#menHoldingHands">👬</a></li>
+          <li data-tags="women,happy,holding hands,one love" id="womenHoldingHands"><a href="#womenHoldingHands">👭</a></li>
+          <li data-tags="couple,love,kissing" id="coupleKissing"><a href="#coupleKissing">💏</a></li>
+          <li data-tags="couple,love" id="couple"><a href="#couple">💑</a></li>
+          <li data-tags="dancing cat ladies,why is this an emoji?,dance,women" id="catLadies"><a href="#catLadies">👯</a></li>
+          <li data-tags="woman,raised arms,excited,burpees!" id="raisedArms"><a href="#raisedArms">🙆</a></li>
+          <li data-tags="woman,arms crossed,ramp marshal,hand signals" id="armsCrossed"><a href="#armsCrossed">🙅</a></li>
+          <li data-tags="woman,inform" id="inform"><a href="#inform">💁</a></li>
+          <li data-tags="woman,raise arm,question" id="question"><a href="#question">🙋</a></li>
+          <li data-tags="woman,scalp massage,relax" id="massage"><a href="#massage">💆</a></li>
+          <li data-tags="woman,haircut,salon,hair did" id="haircut"><a href="#haircut">💇</a></li>
+          <li data-tags="fingernail polish,manicure,nails did" id="manicure"><a href="#manicure">💅</a></li>
+          <li data-tags="bride,wedding,dress,woman" id="bride"><a href="#bride">👰</a></li>
+          <li data-tags="woman,pouting,unhappy" id="pouting"><a href="#pouting">🙎</a></li>
+          <li data-tags="woman,slumped,frowning,uhappy" id="slumped"><a href="#slumped">🙍</a></li>
+          <li data-tags="thinking,scheming,bright idea,Tesla" id="thinking"><a href="#thinking">🙇</a></li>
+          <li data-tags="top hat" id="topHat"><a href="#topHat">🎩</a></li>
+          <li data-tags="crown" id="crown"><a href="#crown">👑</a></li>
+          <li data-tags="womans hat" id="womansHat"><a href="#womansHat">👒</a></li>
+          <li data-tags="white shoe,mens shoe" id="shoe"><a href="#shoe">👟</a></li>
+          <li data-tags="brown shoe,mens shoe" id="shoe2"><a href="#shoe2">👞</a></li>
+          <li data-tags="womens shoe" id="womensShoe"><a href="#womensShoe">👡</a></li>
+          <li data-tags="womens shoe" id="womensShoe2"><a href="#womensShoe2">👠</a></li>
+          <li data-tags="womens boot" id="womensBoot"><a href="#womensBoot">👢</a></li>
+          <li data-tags="shirt,polo" id="polo"><a href="#polo">👕</a></li>
+          <li data-tags="suit,dress shirt,tie" id="suit"><a href="#suit">👔</a></li>
+          <li data-tags="womens blouse" id="blouse"><a href="#blouse">👚</a></li>
+          <li data-tags="womens dress" id="dress"><a href="#dress">👗</a></li>
+          <li data-tags="athlete,winner,marathon,tank top" id="marathon"><a href="#marthon">🎽</a></li>
+          <li data-tags="jeans" id="jeans"><a href="#jeans">👖</a></li>
+          <li data-tags="japan,kimono dress" id="kimono"><a href="#kimono">👘</a></li>
+          <li data-tags="bikini,swim" id="bikini"><a href="#bikini">👙</a></li>
+          <li data-tags="briefcase" id="briefcase"><a href="#briefcase">💼</a></li>
+          <li data-tags="handbag,purse" id="handbag"><a href="#handbag">👜</a></li>
+          <li data-tags="handbag,purse,clutch" id="clutch"><a href="#clutch">👝</a></li>
+          <li data-tags="wallet,handbag,coin purse" id="purse"><a href="#purse">👛</a></li>
+          <li data-tags="glasses,spectacles,geek,four eyes,4 eyes" id="glasses"><a href="#glasses">👓</a></li>
+          <li data-tags="ribbon,bow" id="bow"><a href="#bow">🎀</a></li>
+          <li data-tags="folded umbrella" id="umbrella"><a href="#umbrella">🌂</a></li>
+          <li data-tags="lipstick,makeup,cosmetics" id="lipstick"><a href="#lipstick">💄</a></li>
+          <li data-tags="yellow heart" id="yellowHeart"><a href="#yellowHeart">💛</a></li>
+          <li data-tags="blue heart" id="blueHeart"><a href="#blueHeart">💙</a></li>
+          <li data-tags="purple heart,veterans,sacrifice" id="purpleHeart"><a href="#purpleHeart">💜</a></li>
+          <li data-tags="green heart" id="greenHeart"><a href="#greenHeart">💚</a></li>
+          <li data-tags="heart" id="heart"><a href="#heart">❤</a></li>
+          <li data-tags="broken heart,dumped,divorced,she was a bitch anyway" id="brokenHeart"><a href="#brokenHeart">💔</a></li>
+          <li data-tags="growing heart,love,excited" id="growingHeart"><a href="#growingHeart">💗</a></li>
+          <li data-tags="pounding heart,nervous,love,excited" id="poundingHeart"><a href="#poundingHeart">💓</a></li>
+          <li data-tags="two hearts,2 hearts,love" id="twoHearts"><a href="#twoHearts">💕</a></li>
+          <li data-tags="sparkle,heart,love" id="sparkleHeart"><a href="#sparkleHeart">💖</a></li>
+          <li data-tags="two hearts,2 hearts,love" id="twoHearts2"><a href="#twoHearts2">💞</a></li>
+          <li data-tags="arrow,heart,love,cupid" id="arrowHeart"><a href="#">💘</a></li>
+          <li data-tags="love letter" id="loveLetter"><a href="#loveLetter">💌</a></li>
+          <li data-tags="kiss,lips" id="kiss"><a href="#kiss">💋</a></li>
+          <li data-tags="ring,bling,wedding,jewelry,Beyonce,diamond" id="ring"><a href="#ring">💍</a></li>
+          <li data-tags="diamond,rock,bling" id="diamond"><a href="#diamond">💎</a></li>
+          <li data-tags="user,silhouette" id="user"><a href="#user">👤</a></li>
+          <li data-tags="users,silhouettes" id="users"><a href="#users">👥</a></li>
+          <li data-tags="message,bubble" id="message"><a href="#message">💬</a></li>
+          <li data-tags="footprints,track,feet" id="footprints"><a href="#footprints">👣</a></li>
+          <li data-tags="thought,bubble" id="thought"><a href="#thought">💭</a></li>
+        </ul>
+        <h2 id="nature">Nature</h2>
+        <ul>
+          <li data-tags="" id=""><a href="#">🐶</a></li>
+          <li data-tags="" id=""><a href="#">🐺</a></li>
+          <li data-tags="" id=""><a href="#">🐱</a></li>
+          <li data-tags="" id=""><a href="#">🐭</a></li>
+          <li data-tags="" id=""><a href="#">🐹</a></li>
+          <li data-tags="" id=""><a href="#">🐰</a></li>
+          <li data-tags="" id=""><a href="#">🐸</a></li>
+          <li data-tags="" id=""><a href="#">🐯</a></li>
+          <li data-tags="" id=""><a href="#">🐨</a></li>
+          <li data-tags="" id=""><a href="#">🐻</a></li>
+          <li data-tags="" id=""><a href="#">🐷</a></li>
+          <li data-tags="" id=""><a href="#">🐽</a></li>
+          <li data-tags="" id=""><a href="#">🐮</a></li>
+          <li data-tags="" id=""><a href="#">🐗</a></li>
+          <li data-tags="" id=""><a href="#">🐵</a></li>
+          <li data-tags="" id=""><a href="#">🐒</a></li>
+          <li data-tags="" id=""><a href="#">🐴</a></li>
+          <li data-tags="" id=""><a href="#">🐑</a></li>
+          <li data-tags="" id=""><a href="#">🐘</a></li>
+          <li data-tags="" id=""><a href="#">🐼</a></li>
+          <li data-tags="" id=""><a href="#">🐧</a></li>
+          <li data-tags="" id=""><a href="#">🐦</a></li>
+          <li data-tags="" id=""><a href="#">🐤</a></li>
+          <li data-tags="" id=""><a href="#">🐥</a></li>
+          <li data-tags="" id=""><a href="#">🐣</a></li>
+          <li data-tags="" id=""><a href="#">🐔</a></li>
+          <li data-tags="" id=""><a href="#">🐍</a></li>
+          <li data-tags="" id=""><a href="#">🐢</a></li>
+          <li data-tags="" id=""><a href="#">🐛</a></li>
+          <li data-tags="" id=""><a href="#">🐝</a></li>
+          <li data-tags="" id=""><a href="#">🐜</a></li>
+          <li data-tags="" id=""><a href="#">🐞</a></li>
+          <li data-tags="" id=""><a href="#">🐌</a></li>
+          <li data-tags="" id=""><a href="#">🐙</a></li>
+          <li data-tags="" id=""><a href="#">🐚</a></li>
+          <li data-tags="" id=""><a href="#">🐠</a></li>
+          <li data-tags="" id=""><a href="#">🐟</a></li>
+          <li data-tags="" id=""><a href="#">🐬</a></li>
+          <li data-tags="" id=""><a href="#">🐳</a></li>
+          <li data-tags="" id=""><a href="#">🐋</a></li>
+          <li data-tags="" id=""><a href="#">🐄</a></li>
+          <li data-tags="" id=""><a href="#">🐏</a></li>
+          <li data-tags="" id=""><a href="#">🐀</a></li>
+          <li data-tags="" id=""><a href="#">🐃</a></li>
+          <li data-tags="" id=""><a href="#">🐅</a></li>
+          <li data-tags="" id=""><a href="#">🐇</a></li>
+          <li data-tags="" id=""><a href="#">🐉</a></li>
+          <li data-tags="" id=""><a href="#">🐎</a></li>
+          <li data-tags="" id=""><a href="#">🐐</a></li>
+          <li data-tags="" id=""><a href="#">🐓</a></li>
+          <li data-tags="" id=""><a href="#">🐕</a></li>
+          <li data-tags="" id=""><a href="#">🐖</a></li>
+          <li data-tags="" id=""><a href="#">🐁</a></li>
+          <li data-tags="" id=""><a href="#">🐂</a></li>
+          <li data-tags="" id=""><a href="#">🐲</a></li>
+          <li data-tags="" id=""><a href="#">🐡</a></li>
+          <li data-tags="" id=""><a href="#">🐊</a></li>
+          <li data-tags="" id=""><a href="#">🐫</a></li>
+          <li data-tags="" id=""><a href="#">🐪</a></li>
+          <li data-tags="" id=""><a href="#">🐆</a></li>
+          <li data-tags="" id=""><a href="#">🐈</a></li>
+          <li data-tags="" id=""><a href="#">🐩</a></li>
+          <li data-tags="" id=""><a href="#">🐾</a></li>
+          <li data-tags="" id=""><a href="#">💐</a></li>
+          <li data-tags="" id=""><a href="#">🌸</a></li>
+          <li data-tags="" id=""><a href="#">🌷</a></li>
+          <li data-tags="" id=""><a href="#">🍀</a></li>
+          <li data-tags="" id=""><a href="#">🌹</a></li>
+          <li data-tags="" id=""><a href="#">🌻</a></li>
+          <li data-tags="" id=""><a href="#">🌺</a></li>
+          <li data-tags="" id=""><a href="#">🍁</a></li>
+          <li data-tags="" id=""><a href="#">🍃</a></li>
+          <li data-tags="" id=""><a href="#">🍂</a></li>
+          <li data-tags="" id=""><a href="#">🌿</a></li>
+          <li data-tags="" id=""><a href="#">🌾</a></li>
+          <li data-tags="" id=""><a href="#">🍄</a></li>
+          <li data-tags="" id=""><a href="#">🌵</a></li>
+          <li data-tags="" id=""><a href="#">🌴</a></li>
+          <li data-tags="" id=""><a href="#">🌲</a></li>
+          <li data-tags="" id=""><a href="#">🌳</a></li>
+          <li data-tags="" id=""><a href="#">🌰</a></li>
+          <li data-tags="" id=""><a href="#">🌱</a></li>
+          <li data-tags="" id=""><a href="#">🌼</a></li>
+          <li data-tags="" id=""><a href="#">🌐</a></li>
+          <li data-tags="" id=""><a href="#">🌞</a></li>
+          <li data-tags="" id=""><a href="#">🌝</a></li>
+          <li data-tags="" id=""><a href="#">🌚</a></li>
+          <li data-tags="" id=""><a href="#">🌑</a></li>
+          <li data-tags="" id=""><a href="#">🌒</a></li>
+          <li data-tags="" id=""><a href="#">🌓</a></li>
+          <li data-tags="" id=""><a href="#">🌔</a></li>
+          <li data-tags="" id=""><a href="#">🌕</a></li>
+          <li data-tags="" id=""><a href="#">🌖</a></li>
+          <li data-tags="" id=""><a href="#">🌗</a></li>
+          <li data-tags="" id=""><a href="#">🌘</a></li>
+          <li data-tags="" id=""><a href="#">🌜</a></li>
+          <li data-tags="" id=""><a href="#">🌛</a></li>
+          <li data-tags="" id=""><a href="#">🌙</a></li>
+          <li data-tags="" id=""><a href="#">🌍</a></li>
+          <li data-tags="" id=""><a href="#">🌎</a></li>
+          <li data-tags="" id=""><a href="#">🌏</a></li>
+          <li data-tags="" id=""><a href="#">🌋</a></li>
+          <li data-tags="" id=""><a href="#">🌌</a></li>
+          <li data-tags="" id=""><a href="#">🌠</a></li>
+          <li data-tags="" id=""><a href="#">⭐</a></li>
+          <li data-tags="" id=""><a href="#">☀</a></li>
+          <li data-tags="" id=""><a href="#">⛅</a></li>
+          <li data-tags="" id=""><a href="#">☁</a></li>
+          <li data-tags="" id=""><a href="#">⚡</a></li>
+          <li data-tags="" id=""><a href="#">☔</a></li>
+          <li data-tags="" id=""><a href="#">❄</a></li>
+          <li data-tags="" id=""><a href="#">⛄</a></li>
+          <li data-tags="" id=""><a href="#">🌀</a></li>
+          <li data-tags="" id=""><a href="#">🌁</a></li>
+          <li data-tags="" id=""><a href="#">🌈</a></li>
+          <li data-tags="" id=""><a href="#">🌊</a></li>
+        </ul>
+        <h2 id="objects">Objects</h2>
+        <ul>
+          <li data-tags="" id=""><a href="#">🎍</a></li>
+          <li data-tags="" id=""><a href="#">💝</a></li>
+          <li data-tags="" id=""><a href="#">🎎</a></li>
+          <li data-tags="" id=""><a href="#">🎒</a></li>
+          <li data-tags="" id=""><a href="#">🎓</a></li>
+          <li data-tags="" id=""><a href="#">🎏</a></li>
+          <li data-tags="" id=""><a href="#">🎆</a></li>
+          <li data-tags="" id=""><a href="#">🎇</a></li>
+          <li data-tags="" id=""><a href="#">🎐</a></li>
+          <li data-tags="" id=""><a href="#">🎑</a></li>
+          <li data-tags="" id=""><a href="#">🎃</a></li>
+          <li data-tags="" id=""><a href="#">👻</a></li>
+          <li data-tags="" id=""><a href="#">🎅</a></li>
+          <li data-tags="" id=""><a href="#">🎄</a></li>
+          <li data-tags="" id=""><a href="#">🎁</a></li>
+          <li data-tags="" id=""><a href="#">🎋</a></li>
+          <li data-tags="" id=""><a href="#">🎉</a></li>
+          <li data-tags="" id=""><a href="#">🎊</a></li>
+          <li data-tags="" id=""><a href="#">🎈</a></li>
+          <li data-tags="" id=""><a href="#">🎌</a></li>
+          <li data-tags="" id=""><a href="#">🔮</a></li>
+          <li data-tags="" id=""><a href="#">🎥</a></li>
+          <li data-tags="" id=""><a href="#">📷</a></li>
+          <li data-tags="" id=""><a href="#">📹</a></li>
+          <li data-tags="" id=""><a href="#">📼</a></li>
+          <li data-tags="" id=""><a href="#">💿</a></li>
+          <li data-tags="" id=""><a href="#">📀</a></li>
+          <li data-tags="" id=""><a href="#">💽</a></li>
+          <li data-tags="" id=""><a href="#">💾</a></li>
+          <li data-tags="" id=""><a href="#">💻</a></li>
+          <li data-tags="" id=""><a href="#">📱</a></li>
+          <li data-tags="" id=""><a href="#">☎</a></li>
+          <li data-tags="" id=""><a href="#">📞</a></li>
+          <li data-tags="" id=""><a href="#">📟</a></li>
+          <li data-tags="" id=""><a href="#">📠</a></li>
+          <li data-tags="satellite dish,SETI,transmit" id="satellite"><a href="#satellite">📡</a></li>
+          <li data-tags="" id=""><a href="#">📺</a></li>
+          <li data-tags="" id=""><a href="#">📻</a></li>
+          <li data-tags="" id=""><a href="#">🔊</a></li>
+          <li data-tags="" id=""><a href="#">🔉</a></li>
+          <li data-tags="" id=""><a href="#">🔈</a></li>
+          <li data-tags="" id=""><a href="#">🔇</a></li>
+          <li data-tags="" id=""><a href="#">🔔</a></li>
+          <li data-tags="" id=""><a href="#">🔕</a></li>
+          <li data-tags="" id=""><a href="#">📢</a></li>
+          <li data-tags="" id=""><a href="#">📣</a></li>
+          <li data-tags="" id=""><a href="#">⏳</a></li>
+          <li data-tags="" id=""><a href="#">⌛</a></li>
+          <li data-tags="" id=""><a href="#">⏰</a></li>
+          <li data-tags="" id=""><a href="#">⌚</a></li>
+          <li data-tags="" id=""><a href="#">🔓</a></li>
+          <li data-tags="" id=""><a href="#">🔒</a></li>
+          <li data-tags="" id=""><a href="#">🔏</a></li>
+          <li data-tags="" id=""><a href="#">🔐</a></li>
+          <li data-tags="" id=""><a href="#">🔑</a></li>
+          <li data-tags="" id=""><a href="#">🔎</a></li>
+          <li data-tags="" id=""><a href="#">💡</a></li>
+          <li data-tags="" id=""><a href="#">🔦</a></li>
+          <li data-tags="" id=""><a href="#">🔆</a></li>
+          <li data-tags="" id=""><a href="#">🔅</a></li>
+          <li data-tags="" id=""><a href="#">🔌</a></li>
+          <li data-tags="" id=""><a href="#">🔋</a></li>
+          <li data-tags="" id=""><a href="#">🔍</a></li>
+          <li data-tags="" id=""><a href="#">🛁</a></li>
+          <li data-tags="" id=""><a href="#">🛀</a></li>
+          <li data-tags="" id=""><a href="#">🚿</a></li>
+          <li data-tags="" id=""><a href="#">🚽</a></li>
+          <li data-tags="" id=""><a href="#">🔧</a></li>
+          <li data-tags="" id=""><a href="#">🔩</a></li>
+          <li data-tags="" id=""><a href="#">🔨</a></li>
+          <li data-tags="" id=""><a href="#">🚪</a></li>
+          <li data-tags="" id=""><a href="#">🚬</a></li>
+          <li data-tags="" id=""><a href="#">💣</a></li>
+          <li data-tags="" id=""><a href="#">🔫</a></li>
+          <li data-tags="" id=""><a href="#">🔪</a></li>
+          <li data-tags="" id=""><a href="#">💊</a></li>
+          <li data-tags="" id=""><a href="#">💉</a></li>
+          <li data-tags="" id=""><a href="#">💰</a></li>
+          <li data-tags="" id=""><a href="#">💴</a></li>
+          <li data-tags="" id=""><a href="#">💵</a></li>
+          <li data-tags="" id=""><a href="#">💷</a></li>
+          <li data-tags="" id=""><a href="#">💶</a></li>
+          <li data-tags="" id=""><a href="#">💳</a></li>
+          <li data-tags="" id=""><a href="#">💸</a></li>
+          <li data-tags="" id=""><a href="#">📲</a></li>
+          <li data-tags="" id=""><a href="#">📧</a></li>
+          <li data-tags="" id=""><a href="#">📥</a></li>
+          <li data-tags="" id=""><a href="#">📤</a></li>
+          <li data-tags="" id=""><a href="#">✉</a></li>
+          <li data-tags="" id=""><a href="#">📩</a></li>
+          <li data-tags="" id=""><a href="#">📨</a></li>
+          <li data-tags="" id=""><a href="#">📯</a></li>
+          <li data-tags="" id=""><a href="#">📫</a></li>
+          <li data-tags="" id=""><a href="#">📪</a></li>
+          <li data-tags="" id=""><a href="#">📬</a></li>
+          <li data-tags="" id=""><a href="#">📭</a></li>
+          <li data-tags="" id=""><a href="#">📮</a></li>
+          <li data-tags="" id=""><a href="#">📦</a></li>
+          <li data-tags="" id=""><a href="#">📝</a></li>
+          <li data-tags="" id=""><a href="#">📄</a></li>
+          <li data-tags="" id=""><a href="#">📃</a></li>
+          <li data-tags="" id=""><a href="#">📑</a></li>
+          <li data-tags="" id=""><a href="#">📊</a></li>
+          <li data-tags="" id=""><a href="#">📈</a></li>
+          <li data-tags="" id=""><a href="#">📉</a></li>
+          <li data-tags="" id=""><a href="#">📜</a></li>
+          <li data-tags="" id=""><a href="#">📋</a></li>
+          <li data-tags="" id=""><a href="#">📅</a></li>
+          <li data-tags="" id=""><a href="#">📆</a></li>
+          <li data-tags="" id=""><a href="#">📇</a></li>
+          <li data-tags="" id=""><a href="#">📁</a></li>
+          <li data-tags="" id=""><a href="#">📂</a></li>
+          <li data-tags="" id=""><a href="#">✂</a></li>
+          <li data-tags="" id=""><a href="#">📌</a></li>
+          <li data-tags="" id=""><a href="#">📎</a></li>
+          <li data-tags="" id=""><a href="#">✒</a></li>
+          <li data-tags="" id=""><a href="#">✏</a></li>
+          <li data-tags="" id=""><a href="#">📏</a></li>
+          <li data-tags="" id=""><a href="#">📐</a></li>
+          <li data-tags="" id=""><a href="#">📕</a></li>
+          <li data-tags="" id=""><a href="#">📗</a></li>
+          <li data-tags="" id=""><a href="#">📘</a></li>
+          <li data-tags="" id=""><a href="#">📙</a></li>
+          <li data-tags="" id=""><a href="#">📓</a></li>
+          <li data-tags="" id=""><a href="#">📔</a></li>
+          <li data-tags="" id=""><a href="#">📒</a></li>
+          <li data-tags="" id=""><a href="#">📚</a></li>
+          <li data-tags="" id=""><a href="#">📖</a></li>
+          <li data-tags="" id=""><a href="#">🔖</a></li>
+          <li data-tags="" id=""><a href="#">📛</a></li>
+          <li data-tags="" id=""><a href="#">🔬</a></li>
+          <li data-tags="" id=""><a href="#">🔭</a></li>
+          <li data-tags="" id=""><a href="#">📰</a></li>
+          <li data-tags="" id=""><a href="#">🎨</a></li>
+          <li data-tags="" id=""><a href="#">🎬</a></li>
+          <li data-tags="" id=""><a href="#">🎤</a></li>
+          <li data-tags="" id=""><a href="#">🎧</a></li>
+          <li data-tags="" id=""><a href="#">🎼</a></li>
+          <li data-tags="" id=""><a href="#">🎵</a></li>
+          <li data-tags="" id=""><a href="#">🎶</a></li>
+          <li data-tags="" id=""><a href="#">🎹</a></li>
+          <li data-tags="" id=""><a href="#">🎻</a></li>
+          <li data-tags="" id=""><a href="#">🎺</a></li>
+          <li data-tags="" id=""><a href="#">🎷</a></li>
+          <li data-tags="" id=""><a href="#">🎸</a></li>
+          <li data-tags="" id=""><a href="#">👾</a></li>
+          <li data-tags="" id=""><a href="#">🎮</a></li>
+          <li data-tags="" id=""><a href="#">🃏</a></li>
+          <li data-tags="" id=""><a href="#">🎴</a></li>
+          <li data-tags="" id=""><a href="#">🀄</a></li>
+          <li data-tags="" id=""><a href="#">🎲</a></li>
+          <li data-tags="" id=""><a href="#">🎯</a></li>
+          <li data-tags="" id=""><a href="#">🏈</a></li>
+          <li data-tags="" id=""><a href="#">🏀</a></li>
+          <li data-tags="" id=""><a href="#">⚽</a></li>
+          <li data-tags="" id=""><a href="#">⚾</a></li>
+          <li data-tags="" id=""><a href="#">🎾</a></li>
+          <li data-tags="" id=""><a href="#">🎱</a></li>
+          <li data-tags="" id=""><a href="#">🏉</a></li>
+          <li data-tags="" id=""><a href="#">🎳</a></li>
+          <li data-tags="" id=""><a href="#">⛳</a></li>
+          <li data-tags="" id=""><a href="#">🚵</a></li>
+          <li data-tags="" id=""><a href="#">🚴</a></li>
+          <li data-tags="" id=""><a href="#">🏁</a></li>
+          <li data-tags="" id=""><a href="#">🏇</a></li>
+          <li data-tags="" id=""><a href="#">🏆</a></li>
+          <li data-tags="" id=""><a href="#">🎿</a></li>
+          <li data-tags="" id=""><a href="#">🏂</a></li>
+          <li data-tags="" id=""><a href="#">🏊</a></li>
+          <li data-tags="" id=""><a href="#">🏄</a></li>
+          <li data-tags="" id=""><a href="#">🎣</a></li>
+          <li data-tags="" id=""><a href="#">☕</a></li>
+          <li data-tags="" id=""><a href="#">🍵</a></li>
+          <li data-tags="" id=""><a href="#">🍶</a></li>
+          <li data-tags="" id=""><a href="#">🍼</a></li>
+          <li data-tags="" id=""><a href="#">🍺</a></li>
+          <li data-tags="" id=""><a href="#">🍻</a></li>
+          <li data-tags="" id=""><a href="#">🍸</a></li>
+          <li data-tags="" id=""><a href="#">🍹</a></li>
+          <li data-tags="" id=""><a href="#">🍷</a></li>
+          <li data-tags="" id=""><a href="#">🍴</a></li>
+          <li data-tags="" id=""><a href="#">🍕</a></li>
+          <li data-tags="" id=""><a href="#">🍔</a></li>
+          <li data-tags="" id=""><a href="#">🍟</a></li>
+          <li data-tags="" id=""><a href="#">🍗</a></li>
+          <li data-tags="" id=""><a href="#">🍖</a></li>
+          <li data-tags="" id=""><a href="#">🍝</a></li>
+          <li data-tags="" id=""><a href="#">🍛</a></li>
+          <li data-tags="" id=""><a href="#">🍤</a></li>
+          <li data-tags="" id=""><a href="#">🍱</a></li>
+          <li data-tags="" id=""><a href="#">🍣</a></li>
+          <li data-tags="" id=""><a href="#">🍥</a></li>
+          <li data-tags="" id=""><a href="#">🍙</a></li>
+          <li data-tags="" id=""><a href="#">🍘</a></li>
+          <li data-tags="" id=""><a href="#">🍚</a></li>
+          <li data-tags="" id=""><a href="#">🍜</a></li>
+          <li data-tags="" id=""><a href="#">🍲</a></li>
+          <li data-tags="" id=""><a href="#">🍢</a></li>
+          <li data-tags="" id=""><a href="#">🍡</a></li>
+          <li data-tags="" id=""><a href="#">🍳</a></li>
+          <li data-tags="" id=""><a href="#">🍞</a></li>
+          <li data-tags="" id=""><a href="#">🍩</a></li>
+          <li data-tags="" id=""><a href="#">🍮</a></li>
+          <li data-tags="" id=""><a href="#">🍦</a></li>
+          <li data-tags="" id=""><a href="#">🍨</a></li>
+          <li data-tags="" id=""><a href="#">🍧</a></li>
+          <li data-tags="" id=""><a href="#">🎂</a></li>
+          <li data-tags="" id=""><a href="#">🍰</a></li>
+          <li data-tags="" id=""><a href="#">🍪</a></li>
+          <li data-tags="" id=""><a href="#">🍫</a></li>
+          <li data-tags="" id=""><a href="#">🍬</a></li>
+          <li data-tags="" id=""><a href="#">🍭</a></li>
+          <li data-tags="" id=""><a href="#">🍯</a></li>
+          <li data-tags="" id=""><a href="#">🍎</a></li>
+          <li data-tags="" id=""><a href="#">🍏</a></li>
+          <li data-tags="" id=""><a href="#">🍊</a></li>
+          <li data-tags="" id=""><a href="#">🍋</a></li>
+          <li data-tags="" id=""><a href="#">🍒</a></li>
+          <li data-tags="" id=""><a href="#">🍇</a></li>
+          <li data-tags="" id=""><a href="#">🍉</a></li>
+          <li data-tags="" id=""><a href="#">🍓</a></li>
+          <li data-tags="" id=""><a href="#">🍑</a></li>
+          <li data-tags="" id=""><a href="#">🍈</a></li>
+          <li data-tags="" id=""><a href="#">🍌</a></li>
+          <li data-tags="" id=""><a href="#">🍐</a></li>
+          <li data-tags="" id=""><a href="#">🍍</a></li>
+          <li data-tags="" id=""><a href="#">🍠</a></li>
+          <li data-tags="" id=""><a href="#">🍆</a></li>
+          <li data-tags="" id=""><a href="#">🍅</a></li>
+          <li data-tags="" id=""><a href="#">🌽</a></li>
+        </ul>
+        <h2 id="places">Places</h2>
+        <ul>
+          <li data-tags="" id=""><a href="#">🏠</a></li>
+          <li data-tags="" id=""><a href="#">🏡</a></li>
+          <li data-tags="" id=""><a href="#">🏫</a></li>
+          <li data-tags="" id=""><a href="#">🏢</a></li>
+          <li data-tags="" id=""><a href="#">🏣</a></li>
+          <li data-tags="" id=""><a href="#">🏥</a></li>
+          <li data-tags="" id=""><a href="#">🏦</a></li>
+          <li data-tags="" id=""><a href="#">🏪</a></li>
+          <li data-tags="" id=""><a href="#">🏩</a></li>
+          <li data-tags="" id=""><a href="#">🏨</a></li>
+          <li data-tags="" id=""><a href="#">💒</a></li>
+          <li data-tags="" id=""><a href="#">⛪</a></li>
+          <li data-tags="" id=""><a href="#">🏬</a></li>
+          <li data-tags="" id=""><a href="#">🏤</a></li>
+          <li data-tags="" id=""><a href="#">🌇</a></li>
+          <li data-tags="" id=""><a href="#">🌆</a></li>
+          <li data-tags="" id=""><a href="#">🏯</a></li>
+          <li data-tags="" id=""><a href="#">🏰</a></li>
+          <li data-tags="" id=""><a href="#">⛺</a></li>
+          <li data-tags="" id=""><a href="#">🏭</a></li>
+          <li data-tags="" id=""><a href="#">🗼</a></li>
+          <li data-tags="" id=""><a href="#">🗾</a></li>
+          <li data-tags="" id=""><a href="#">🗻</a></li>
+          <li data-tags="" id=""><a href="#">🌄</a></li>
+          <li data-tags="" id=""><a href="#">🌅</a></li>
+          <li data-tags="" id=""><a href="#">🌃</a></li>
+          <li data-tags="" id=""><a href="#">🗽</a></li>
+          <li data-tags="" id=""><a href="#">🌉</a></li>
+          <li data-tags="" id=""><a href="#">🎠</a></li>
+          <li data-tags="" id=""><a href="#">🎡</a></li>
+          <li data-tags="" id=""><a href="#">⛲</a></li>
+          <li data-tags="" id=""><a href="#">🎢</a></li>
+          <li data-tags="" id=""><a href="#">🚢</a></li>
+          <li data-tags="" id=""><a href="#">⛵</a></li>
+          <li data-tags="" id=""><a href="#">🚤</a></li>
+          <li data-tags="" id=""><a href="#">🚣</a></li>
+          <li data-tags="" id=""><a href="#">⚓</a></li>
+          <li data-tags="" id=""><a href="#">🚀</a></li>
+          <li data-tags="" id=""><a href="#">✈</a></li>
+          <li data-tags="" id=""><a href="#">💺</a></li>
+          <li data-tags="" id=""><a href="#">🚁</a></li>
+          <li data-tags="" id=""><a href="#">🚂</a></li>
+          <li data-tags="" id=""><a href="#">🚊</a></li>
+          <li data-tags="" id=""><a href="#">🚉</a></li>
+          <li data-tags="" id=""><a href="#">🚞</a></li>
+          <li data-tags="" id=""><a href="#">🚆</a></li>
+          <li data-tags="" id=""><a href="#">🚄</a></li>
+          <li data-tags="" id=""><a href="#">🚅</a></li>
+          <li data-tags="" id=""><a href="#">🚈</a></li>
+          <li data-tags="" id=""><a href="#">🚇</a></li>
+          <li data-tags="" id=""><a href="#">🚝</a></li>
+          <li data-tags="" id=""><a href="#">🚋</a></li>
+          <li data-tags="" id=""><a href="#">🚃</a></li>
+          <li data-tags="" id=""><a href="#">🚎</a></li>
+          <li data-tags="" id=""><a href="#">🚌</a></li>
+          <li data-tags="" id=""><a href="#">🚍</a></li>
+          <li data-tags="" id=""><a href="#">🚙</a></li>
+          <li data-tags="" id=""><a href="#">🚘</a></li>
+          <li data-tags="" id=""><a href="#">🚗</a></li>
+          <li data-tags="" id=""><a href="#">🚕</a></li>
+          <li data-tags="" id=""><a href="#">🚖</a></li>
+          <li data-tags="" id=""><a href="#">🚛</a></li>
+          <li data-tags="" id=""><a href="#">🚚</a></li>
+          <li data-tags="" id=""><a href="#">🚨</a></li>
+          <li data-tags="" id=""><a href="#">🚓</a></li>
+          <li data-tags="" id=""><a href="#">🚔</a></li>
+          <li data-tags="" id=""><a href="#">🚒</a></li>
+          <li data-tags="" id=""><a href="#">🚑</a></li>
+          <li data-tags="" id=""><a href="#">🚐</a></li>
+          <li data-tags="" id=""><a href="#">🚲</a></li>
+          <li data-tags="" id=""><a href="#">🚡</a></li>
+          <li data-tags="" id=""><a href="#">🚟</a></li>
+          <li data-tags="" id=""><a href="#">🚠</a></li>
+          <li data-tags="" id=""><a href="#">🚜</a></li>
+          <li data-tags="" id=""><a href="#">💈</a></li>
+          <li data-tags="" id=""><a href="#">🚏</a></li>
+          <li data-tags="" id=""><a href="#">🎫</a></li>
+          <li data-tags="" id=""><a href="#">🚦</a></li>
+          <li data-tags="" id=""><a href="#">🚥</a></li>
+          <li data-tags="" id=""><a href="#">⚠</a></li>
+          <li data-tags="" id=""><a href="#">🚧</a></li>
+          <li data-tags="" id=""><a href="#">🔰</a></li>
+          <li data-tags="" id=""><a href="#">⛽</a></li>
+          <li data-tags="" id=""><a href="#">🏮</a></li>
+          <li data-tags="" id=""><a href="#">🎰</a></li>
+          <li data-tags="" id=""><a href="#">♨</a></li>
+          <li data-tags="" id=""><a href="#">🗿</a></li>
+          <li data-tags="" id=""><a href="#">🎪</a></li>
+          <li data-tags="" id=""><a href="#">🎭</a></li>
+          <li data-tags="" id=""><a href="#">📍</a></li>
+          <li data-tags="" id=""><a href="#">🚩</a></li>
+        </ul>
+      </div>
+      <div id="ft">
+        <a href="http://creativecommons.org/licenses/by/3.0/" rel="external license"><img src="http://i.creativecommons.org/l/by/3.0/88x31.png" alt="Creative Commons Attributionion 3.0 License" /></a>
+        <p>
+          This page is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/" rel="external">Creative Commons Attribution 3.0 License</a>
+        </p>
+      </div>
+    </div>
+    <script type="text/javascript">
+      Emoji = (function() {
+        'use strict';
+
+        return {
+          event : {
+            list : [],
+
+            add : function (elm, event, action, capture) {
+              capture = capture || false;
+
+              if (elm.addEventListener) {
+                elm.addEventListener(event, action, capture);
+              }
+
+              else if (elm.attachEvent) {
+                elm.attachEvent('on' + event, action);
+              }
+
+              else {
+                elm['on' + event] = action;
+              }
+            },
+
+            removeAll : function (elm) {
+              elm = elm || document;
+
+              var i = Emoji.event.list.length - 1;
+
+              for (i; i >= 0 ; i -= 1) {
+                if (Emoji.event.list[i]) {
+                  if ((Emoji.event.list[i]) && ((Emoji.event.list[i][0] === elm) || (elm === document))) {
+                    Emoji.event.remove(Emoji.event.list[i][0], Emoji.event.list[i][1], Emoji.event.list[i][2]);
+                  }
+                }
+              }
+            }
+          },
+
+          getTarget : function (e) {
+            e = e || window.event;
+
+            if (e.target) {
+              return e.target;
+            }
+
+            else {
+              return e.srcElement;
+            }
+          },
+
+          getText : function (elm) {
+            if (elm.textContent) {
+              return elm.textContent;
+            }
+
+            else if (elm.innerText) {
+              return elm.innerText;
+            }
+
+            else if (elm.text) {
+              return elm.text;
+            }
+
+            else {
+              return elm.innerHTML;
+            }
+          },
+
+          putText : function (elm, text) {
+            if (elm.textContent) {
+              elm.textContent = text;
+            }
+
+            else if (elm.innerText) {
+              elm.innerText = text;
+            }
+
+            else if (elm.text) {
+              elm.text = text;
+            }
+
+            else {
+              elm.innerHTML = text;
+            }
+          },
+
+          init : function () {
+            var that        = Emoji,
+                body        = document.getElementById('bd'),
+                textInput   = document.getElementById('search-term'),
+                searchStyle = document.getElementById('search-style');
+
+            // Emoji Clicking
+            that.event.add(body, 'click', function(e) {
+              var elm        = that.getTarget(e),
+                  tagName    = elm.tagName.toLowerCase(),
+                  copyBuffer = '';
+
+              if(elm.tagName.toLowerCase() === 'a') {
+                e.preventDefault();
+
+                window.history.pushState({ emoji : Emoji.getText(elm)}, '', elm.href);
+                window.prompt("Copy to clipboard: Command+C, Enter", Emoji.getText(elm));
+              }
+            });
+
+            // Form Searching
+            that.event.add(textInput, 'keyup', function(e) {
+              var value = textInput.value,
+                  css = '';
+
+              if(value) {
+                css = '#bd ul li[data-tags] { display: none; } #bd ul li[data-tags*="' + value + '"] { display: inline-block; }';
+              }
+
+              that.putText(searchStyle, css);
+            });
+          }
+        };
+      }());
+
+      if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', Emoji.init, false);
+      }
+
+      Emoji.event.add(window, 'load', function () {
+        'use strict';
+        if (!document.addEventListener) {
+          Emoji.init();
+        }
+      });
+
+      Emoji.event.add(window, 'unload', function () {
+        'use strict';
+        Emoji.event.removeAll();
+      });
+    </script>
+  </body>
+</html>
