@@ -9,4 +9,6 @@ Designed to work with a static page (no XHR, no external files) for any platform
 
 Load the page and either browse or begin searching in real-time via the search bar.
 
+Click on any emoji to change the URL to a shareable link.  Double-click any emoji to bring up a dialog to easily copy it to your clipboard.
+
 If you have suggestions on tag additions or changes, feel free to submit a pull request.
