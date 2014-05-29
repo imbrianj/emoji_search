@@ -142,6 +142,20 @@
         z-index: 3;
       }
 
+      #about {
+        display: none;
+      }
+
+      #about:target {
+        display: block;
+      }
+
+      #about:target ~ form,
+      #about:target ~ h2,
+      #about:target ~ ul {
+        display: none;
+      }
+
       #ft {
         border-top: 1px solid #000;
         margin-top: .5em;
@@ -162,6 +176,15 @@
   <body>
     <div class="wrapper">
       <div id="bd">
+        <div id="about">
+          <h2>About</h2>
+          <p>
+            This tool is meant to be slightly useful, more a display of some capabilities for CSS to work as a simple search tool, enhance aesthetics based on interaction and to fascilitate content display.
+          </p>
+          <p>
+            Feel like some tags should be added or changed?  Have an idea that I should incorporate?  Let me know!
+          </p>
+        </div>
         <form>
           <fieldset>
             <label for="search-term">Search Tags:</label>
