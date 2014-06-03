@@ -93,9 +93,15 @@
         width: 50%;
       }
 
+      #bd ul {
+        position: relative;
+        z-index: 2;
+      }
+
       #bd ul li {
         display: inline-block;
         font-size: 2em;
+        padding: .15em;
       }
 
       html:target #bd ul li:hover:after {
@@ -168,12 +174,12 @@
 
       #ft p {
         font-size: .75em;
-        line-height: 31px;
         vertical-align: middle;
       }
     </style>
   </head>
   <body>
+    <a href="https://github.com/imbrianj/emoji_search"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 1" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
     <div class="wrapper">
       <div id="bd">
         <div id="about">
@@ -578,7 +584,7 @@
           <li data-tags="door" id="door"><a href="#door">🚪</a></li>
           <li data-tags="smoking,smoke,cigarette,cancer,lungs" id="cigarette"><a href="#cigarette">🚬</a></li>
           <li data-tags="bomb" id="bomb"><a href="#bomb">💣</a></li>
-          <li data-tags="gun,2A" id="gun"><a href="#gun">🔫</a></li>
+          <li data-tags="gun,2A,pew pew" id="gun"><a href="#gun">🔫</a></li>
           <li data-tags="knife" id="knife"><a href="#knife">🔪</a></li>
           <li data-tags="pill,drugs,rx" id="pill"><a href="#pill">💊</a></li>
           <li data-tags="syringe,drugs,rx" id="syringe"><a href="#syringe">💉</a></li>
@@ -738,97 +744,97 @@
         </ul>
         <h2 id="places">Places</h2>
         <ul>
-          <li data-tags="" id=""><a href="#">🏠</a></li>
-          <li data-tags="" id=""><a href="#">🏡</a></li>
-          <li data-tags="" id=""><a href="#">🏫</a></li>
-          <li data-tags="" id=""><a href="#">🏢</a></li>
-          <li data-tags="" id=""><a href="#">🏣</a></li>
-          <li data-tags="" id=""><a href="#">🏥</a></li>
-          <li data-tags="" id=""><a href="#">🏦</a></li>
-          <li data-tags="" id=""><a href="#">🏪</a></li>
-          <li data-tags="" id=""><a href="#">🏩</a></li>
-          <li data-tags="" id=""><a href="#">🏨</a></li>
-          <li data-tags="" id=""><a href="#">💒</a></li>
-          <li data-tags="" id=""><a href="#">⛪</a></li>
-          <li data-tags="" id=""><a href="#">🏬</a></li>
-          <li data-tags="" id=""><a href="#">🏤</a></li>
-          <li data-tags="" id=""><a href="#">🌇</a></li>
-          <li data-tags="" id=""><a href="#">🌆</a></li>
-          <li data-tags="" id=""><a href="#">🏯</a></li>
-          <li data-tags="" id=""><a href="#">🏰</a></li>
-          <li data-tags="" id=""><a href="#">⛺</a></li>
-          <li data-tags="" id=""><a href="#">🏭</a></li>
-          <li data-tags="" id=""><a href="#">🗼</a></li>
-          <li data-tags="" id=""><a href="#">🗾</a></li>
-          <li data-tags="" id=""><a href="#">🗻</a></li>
-          <li data-tags="" id=""><a href="#">🌄</a></li>
-          <li data-tags="" id=""><a href="#">🌅</a></li>
-          <li data-tags="" id=""><a href="#">🌃</a></li>
-          <li data-tags="" id=""><a href="#">🗽</a></li>
-          <li data-tags="" id=""><a href="#">🌉</a></li>
-          <li data-tags="" id=""><a href="#">🎠</a></li>
-          <li data-tags="" id=""><a href="#">🎡</a></li>
-          <li data-tags="" id=""><a href="#">⛲</a></li>
-          <li data-tags="" id=""><a href="#">🎢</a></li>
-          <li data-tags="" id=""><a href="#">🚢</a></li>
-          <li data-tags="" id=""><a href="#">⛵</a></li>
-          <li data-tags="" id=""><a href="#">🚤</a></li>
-          <li data-tags="" id=""><a href="#">🚣</a></li>
-          <li data-tags="" id=""><a href="#">⚓</a></li>
-          <li data-tags="" id=""><a href="#">🚀</a></li>
-          <li data-tags="" id=""><a href="#">✈</a></li>
-          <li data-tags="" id=""><a href="#">💺</a></li>
-          <li data-tags="" id=""><a href="#">🚁</a></li>
-          <li data-tags="" id=""><a href="#">🚂</a></li>
-          <li data-tags="" id=""><a href="#">🚊</a></li>
-          <li data-tags="" id=""><a href="#">🚉</a></li>
-          <li data-tags="" id=""><a href="#">🚞</a></li>
-          <li data-tags="" id=""><a href="#">🚆</a></li>
-          <li data-tags="" id=""><a href="#">🚄</a></li>
-          <li data-tags="" id=""><a href="#">🚅</a></li>
-          <li data-tags="" id=""><a href="#">🚈</a></li>
-          <li data-tags="" id=""><a href="#">🚇</a></li>
-          <li data-tags="" id=""><a href="#">🚝</a></li>
-          <li data-tags="" id=""><a href="#">🚋</a></li>
-          <li data-tags="" id=""><a href="#">🚃</a></li>
-          <li data-tags="" id=""><a href="#">🚎</a></li>
-          <li data-tags="" id=""><a href="#">🚌</a></li>
-          <li data-tags="" id=""><a href="#">🚍</a></li>
-          <li data-tags="" id=""><a href="#">🚙</a></li>
-          <li data-tags="" id=""><a href="#">🚘</a></li>
-          <li data-tags="" id=""><a href="#">🚗</a></li>
-          <li data-tags="" id=""><a href="#">🚕</a></li>
-          <li data-tags="" id=""><a href="#">🚖</a></li>
-          <li data-tags="" id=""><a href="#">🚛</a></li>
-          <li data-tags="" id=""><a href="#">🚚</a></li>
-          <li data-tags="" id=""><a href="#">🚨</a></li>
-          <li data-tags="" id=""><a href="#">🚓</a></li>
-          <li data-tags="" id=""><a href="#">🚔</a></li>
-          <li data-tags="" id=""><a href="#">🚒</a></li>
-          <li data-tags="" id=""><a href="#">🚑</a></li>
-          <li data-tags="" id=""><a href="#">🚐</a></li>
-          <li data-tags="" id=""><a href="#">🚲</a></li>
-          <li data-tags="" id=""><a href="#">🚡</a></li>
-          <li data-tags="" id=""><a href="#">🚟</a></li>
-          <li data-tags="" id=""><a href="#">🚠</a></li>
-          <li data-tags="" id=""><a href="#">🚜</a></li>
-          <li data-tags="" id=""><a href="#">💈</a></li>
-          <li data-tags="" id=""><a href="#">🚏</a></li>
-          <li data-tags="" id=""><a href="#">🎫</a></li>
-          <li data-tags="" id=""><a href="#">🚦</a></li>
-          <li data-tags="" id=""><a href="#">🚥</a></li>
-          <li data-tags="" id=""><a href="#">⚠</a></li>
-          <li data-tags="" id=""><a href="#">🚧</a></li>
-          <li data-tags="" id=""><a href="#">🔰</a></li>
-          <li data-tags="" id=""><a href="#">⛽</a></li>
-          <li data-tags="" id=""><a href="#">🏮</a></li>
-          <li data-tags="" id=""><a href="#">🎰</a></li>
-          <li data-tags="" id=""><a href="#">♨</a></li>
-          <li data-tags="" id=""><a href="#">🗿</a></li>
-          <li data-tags="" id=""><a href="#">🎪</a></li>
-          <li data-tags="" id=""><a href="#">🎭</a></li>
-          <li data-tags="" id=""><a href="#">📍</a></li>
-          <li data-tags="" id=""><a href="#">🚩</a></li>
+          <li data-tags="building,house" id="house"><a href="#house">🏠</a></li>
+          <li data-tags="building,house,garden" id="houseWithGarden"><a href="#houseWithGarden">🏡</a></li>
+          <li data-tags="building,school,class" id="school"><a href="#school">🏫</a></li>
+          <li data-tags="building,office,work" id="office"><a href="#office">🏢</a></li>
+          <li data-tags="building,post office,mail" id="postOffice"><a href="#postOffice">🏣</a></li>
+          <li data-tags="building,hospital" id="hospital"><a href="#hospital">🏥</a></li>
+          <li data-tags="building,bank" id="bank"><a href="#bank">🏦</a></li>
+          <li data-tags="building,convenience store,bodega,gas station,junk food" id="convenienceStore"><a href="#convenienceStore">🏪</a></li>
+          <li data-tags="building,hotel,love hotel,horny" id="loveHotel"><a href="#loveHotel">🏩</a></li>
+          <li data-tags="building,hotel" id="hotel"><a href="#hotel">🏨</a></li>
+          <li data-tags="building,wedding,church" id="wedding"><a href="#wedding">💒</a></li>
+          <li data-tags="building,church" id="church"><a href="#church">⛪</a></li>
+          <li data-tags="building,department store,shopping" id="departmentStore"><a href="#departmentStore">🏬</a></li>
+          <li data-tags="building,post office,mail" id="postOffice2"><a href="#postOffice2">🏤</a></li>
+          <li data-tags="buildings,sunset,city,cityscape" id="cityscape"><a href="#cityscape">🌇</a></li>
+          <li data-tags="buildings,sunset,city,cityscape" id="cityscape2"><a href="#cityscape2">🌆</a></li>
+          <li data-tags="building,castle" id="castle"><a href="#castle">🏯</a></li>
+          <li data-tags="building,castle" id="castle2"><a href="#castle2">🏰</a></li>
+          <li data-tags="tent,camping,woods" id="tent"><a href="#tent">⛺</a></li>
+          <li data-tags="building,factory,industry" id="factory"><a href="#factory">🏭</a></li>
+          <li data-tags="building,Tokyo Tower" id="tokyoTower"><a href="#tokyoTower">🗼</a></li>
+          <li data-tags="japan,island" id="japan"><a href="#japan">🗾</a></li>
+          <li data-tags="Mount Fuji,fuji,mountain" id="fuji"><a href="#fuji">🗻</a></li>
+          <li data-tags="mountains,landscape" id="landscape"><a href="#landscape">🌄</a></li>
+          <li data-tags="mountains,landscape" id="landscape2"><a href="#landscape2">🌅</a></li>
+          <li data-tags="cityscape,night,stars,space" id="nightCityscape"><a href="#nightCityscape">🌃</a></li>
+          <li data-tags="Statue of Liberty,freedom,usa,merica" id="statueOfLiberty"><a href="#statueOfLiberty">🗽</a></li>
+          <li data-tags="bridge" id="bridge"><a href="#bridge">🌉</a></li>
+          <li data-tags="carousel,horse,merry go round" id="merryGoRound"><a href="#merryGoRound">🎠</a></li>
+          <li data-tags="ferris wheel" id="ferrisWheel"><a href="#ferrisWheel">🎡</a></li>
+          <li data-tags="fountain" id="fountain"><a href="#fountain">⛲</a></li>
+          <li data-tags="roller coaster,ride,theme park" id="rollerCoaster"><a href="#rollerCoaster">🎢</a></li>
+          <li data-tags="cruise ship,ocean,sea,old people" id="cruiseShip"><a href="#cruiseShip">🚢</a></li>
+          <li data-tags="sail boat,ship it" id="sailBoat"><a href="#sailBoat">⛵</a></li>
+          <li data-tags="speed boat,vroom vroom" id="speedBoat"><a href="#speedBoat">🚤</a></li>
+          <li data-tags="row boat,canoe" id="rowBoat"><a href="#rowBoat">🚣</a></li>
+          <li data-tags="anchor,boat" id="anchor"><a href="#anchor">⚓</a></li>
+          <li data-tags="rocket,ship,space,stars,Elon Musk,SpaceX,NASA" id="rocketShip"><a href="#rocketShip">🚀</a></li>
+          <li data-tags="airplane,airliner,jet,travel" id="jet"><a href="#jet">✈</a></li>
+          <li data-tags="airline seat,cattle" id="airline"><a href="#airline">💺</a></li>
+          <li data-tags="helicopter,death trap" id="helicopter"><a href="#helicopter">🚁</a></li>
+          <li data-tags="train,locomotive,steam" id="locomotive"><a href="#locomotive">🚂</a></li>
+          <li data-tags="tram,train" id="tram"><a href="#tram">🚊</a></li>
+          <li data-tags="tram,train,station,stop" id="tramStation"><a href="#tramStation">🚉</a></li>
+          <li data-tags="railway,mountain" id="railway"><a href="#railway">🚞</a></li>
+          <li data-tags="train" id="train"><a href="#train">🚆</a></li>
+          <li data-tags="bullet train,high speed" id="bulletTrain"><a href="#bulletTrain">🚄</a></li>
+          <li data-tags="high speed,train" id="highSpeedTrain"><a href="#highSpeedTrain">🚅</a></li>
+          <li data-tags="light rail" id="lightRail"><a href="#lightRail">🚈</a></li>
+          <li data-tags="subway,metro,tube" id="subway"><a href="#subway">🚇</a></li>
+          <li data-tags="monorail,Seattle,teh futurez" id="monorail"><a href="#monorail">🚝</a></li>
+          <li data-tags="tram car" id="tramCar"><a href="#tramCar">🚋</a></li>
+          <li data-tags="railway car" id="railwayCar"><a href="#railwayCar">🚃</a></li>
+          <li data-tags="trolly,bus" id="trollyBus"><a href="#trollyBus">🚎</a></li>
+          <li data-tags="bus,public transport" id="bus"><a href="#bus">🚌</a></li>
+          <li data-tags="bus,public transport" id="bus2"><a href="#bus2">🚍</a></li>
+          <li data-tags="car,compact" id="compactCar"><a href="#compactCar">🚙</a></li>
+          <li data-tags="car" id="car"><a href="#car">🚘</a></li>
+          <li data-tags="car,hatchback" id="hatchback"><a href="#hatchback">🚗</a></li>
+          <li data-tags="car,taxi" id="taxi"><a href="#taxi">🚕</a></li>
+          <li data-tags="car,taxi" id="taxi2"><a href="#taxi2">🚖</a></li>
+          <li data-tags="truck,freight,haul" id="freight"><a href="#freight">🚛</a></li>
+          <li data-tags="truck,freight,haul,delivery" id="delivery"><a href="#delivery">🚚</a></li>
+          <li data-tags="siren,emergency,police,light" id="siren"><a href="#siren">🚨</a></li>
+          <li data-tags="police car,popo,emergency,donut" id="policeCar"><a href="#policeCar">🚓</a></li>
+          <li data-tags="police car,popo,emergency,donut" id="policeCar2"><a href="#policeCar2">🚔</a></li>
+          <li data-tags="fire engine,fire truck,emergency" id="fireTruck"><a href="#fireTruck">🚒</a></li>
+          <li data-tags="ambulance,emergency,amber lamps" id="ambulance"><a href="#ambulance">🚑</a></li>
+          <li data-tags="bus,van,creeper,down by the river" id="van"><a href="#van">🚐</a></li>
+          <li data-tags="bike,bicycle" id="bike"><a href="#bike">🚲</a></li>
+          <li data-tags="gondola,suspension" id="gondola"><a href="#gondola">🚡</a></li>
+          <li data-tags="gondola,suspension" id="gondola2"><a href="#gondola2">🚟</a></li>
+          <li data-tags="gondola,suspension" id="gondola3"><a href="#gondola3">🚠</a></li>
+          <li data-tags="tractor,farm" id="tractor"><a href="#tractor">🚜</a></li>
+          <li data-tags="barber pole,hair cut" id="barber"><a href="#barber">💈</a></li>
+          <li data-tags="bus stop,public transport" id="busStop"><a href="#busStop">🚏</a></li>
+          <li data-tags="ticket,airline,bus" id="ticket"><a href="#ticket">🎫</a></li>
+          <li data-tags="traffic light" id="trafficLight"><a href="#trafficLight">🚦</a></li>
+          <li data-tags="traffic light" id="trafficLight2"><a href="#trafficLight2">🚥</a></li>
+          <li data-tags="warning" id="warning"><a href="#warning">⚠</a></li>
+          <li data-tags="construction,blockade" id="construction"><a href="#construction">🚧</a></li>
+          <li data-tags="beginner,newbie,n00b" id="beginner"><a href="#beginner">🔰</a></li>
+          <li data-tags="gas pump,gas station,fuel" id="gasPump"><a href="#gasPump">⛽</a></li>
+          <li data-tags="lantern,Izakaya" id="lantern"><a href="#lantern">🏮</a></li>
+          <li data-tags="slots,casino,vegas" id="slots"><a href="#slots">🎰</a></li>
+          <li data-tags="hot,steam,hot springs" id="hotSprings"><a href="#hotSprings">♨</a></li>
+          <li data-tags="easter island,statue,Moyai" id="easterIsland"><a href="#easterIsland">🗿</a></li>
+          <li data-tags="circus,big top,side show,freaks" id="circus"><a href="#circus">🎪</a></li>
+          <li data-tags="performing arts,masks" id="performingArts"><a href="#performingArts">🎭</a></li>
+          <li data-tags="push pin,location" id="location"><a href="#location">📍</a></li>
+          <li data-tags="flag,location" id="flag"><a href="#flag">🚩</a></li>
         </ul>
       </div>
       <div id="ft">
